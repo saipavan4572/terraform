@@ -13,7 +13,7 @@ variable "image_id" {
         # $ terraform plan
         # var.image_id
         #   RHEL-9 AMI ID
-        #   Enter a value:
+        #   Enter a value:      ---> here we can provide like: t3.micro
 
 variable "instance_type" {
     default = "t3.micro"
