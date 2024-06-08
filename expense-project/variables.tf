@@ -1,6 +1,8 @@
+
+# ec2 variables
 variable "instance_names" {
     type = list
-    default = [ "db", "backend", "frontend"]  
+    default = [ "db", "backend", "frontend"]  # index values: 0,1,2
 }
 variable "image_id" {
   type        = string                  #optional
@@ -14,4 +16,35 @@ variable "common_tags" {
         Terraform = "True"
 
     }
+}
+
+#Security Group(sg) variables
+variable "sg_name" {
+    default = "allow_ssh"
+}
+
+variable "sg_description" {
+    default = "allowing port 22"
+}
+
+variable "ssh_port" {
+    default = 22
+}
+
+variable "protocol" {
+    default = "tcp"
+}
+
+variable "allowed_cidr" {
+
+    type = list(string)     #optional
+    default = ["0.0.0.0/0"]
+}
+
+#route53 variables
+variable "zone_id" {
+    default = "Z093373829N4OKOHIDM5S"
+}
+variable "domain_name" {
+    default = "pspkdevops.online"
 }
